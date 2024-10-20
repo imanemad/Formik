@@ -4,6 +4,7 @@ import Textarea from './Textarea';
 import Select from './Select';
 import Radio from './Radio';
 import Checkbox from './Checkbox';
+import File from './File';
 
 const FormikControl = (props) => {
     switch (props.control){
@@ -17,6 +18,8 @@ const FormikControl = (props) => {
             return <Radio {...props}/>
         case 'checkbox':
             return <Checkbox {...props}/>
+        case 'file':
+            return <File {...props}/>
         default:
             break
     }

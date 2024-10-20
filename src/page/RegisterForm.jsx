@@ -29,8 +29,7 @@ const RegisterForm = () => {
             onSubmit={handleSubmit} 
             validationSchema={validationSchema}
             validateOnMount 
-            enableReinitialize
-        >
+            enableReinitialize>
             {formik => (
                 <>
                     <Form className="GridCenter">

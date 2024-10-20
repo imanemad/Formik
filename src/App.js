@@ -1,13 +1,10 @@
-import { useSelector } from "react-redux";
-import RegisterForm from "./page/RegisterForm";
+import Login from "./login/pages/Login";
 
 function App() {
-  const {mode}=useSelector(state=>state.darkmode)
-
   
   return (
-    <div className={mode}>
-      <RegisterForm/>
+    <div>
+      <Login/>
     </div>
   );
 }
