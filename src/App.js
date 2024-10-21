@@ -1,11 +1,12 @@
-import Login from "./login/pages/Login";
+import LayoutContextContainer from "./context/layoutContext";
+import Index from "./layouts/admin/Index";
 
 function App() {
   
   return (
-    <div>
-      <Login/>
-    </div>
+    <LayoutContextContainer>
+      <Index/>
+    </LayoutContextContainer>
   );
 }
 
