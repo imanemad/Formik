@@ -1,5 +1,7 @@
 import React from 'react';
 import TablePages from '../../components/TablePages';
+import AddProduct from './AddProduct';
+import AddProductAtt from './AddProductAtt';
 
 const TableProduct = () => {
     const data=[
@@ -16,7 +18,7 @@ const TableProduct = () => {
         {
             id:2,
             category:"ccc",
-            title:"ddd",
+            title:"bbb",
             price:"555",
             stock:"3",
             like_count:"1",
@@ -26,7 +28,7 @@ const TableProduct = () => {
         {
             id:3,
             category:"aaa",
-            title:"bbb",
+            title:"ddd",
             price:"222",
             stock:"5",
             like_count:"2",
@@ -46,7 +48,7 @@ const TableProduct = () => {
     ]
     const dataInfo=[
         {feild:"id",title:"#"},
-        {feild:"category",title:"عنوان محصول"},
+        {feild:"title",title:"عنوان محصول"},
         {feild:"price",title:"قیمت محصول"}
     ]
     const additionalElements=()=>{
@@ -54,17 +56,25 @@ const TableProduct = () => {
             <>
                 <i className="fas fa-edit text-warning mx-1 hoverable_text pointer has_tooltip" title="ویرایش محصول" data-bs-toggle="modal" data-bs-placement="top" data-bs-target="#add_product_modal"></i>
                 <i className="fas fa-receipt text-info mx-1 hoverable_text pointer has_tooltip" title="ثبت ویژگی" data-bs-toggle="modal" data-bs-target="#add_product_attr_modal"></i>
+                <i className="fas fa-plus text-success mx-1 hoverable_text pointer has_tooltip" title="افزودن ویژگی" data-bs-placement="top" data-bs-toggle="modal" data-bs-target="#add_product_attr_modal"></i>
                 <i className="fas fa-times text-danger mx-1 hoverable_text pointer has_tooltip" title="حذف محصول" data-bs-toggle="tooltip" data-bs-placement="top"></i>
             </>
         )
     }
-
     const additionField={
         title:"عملیات",
         elements:()=>additionalElements()
     }
+    const searchParams={
+        title:"جستجو",
+        placeholder:"قسمتی از عنوان را وارد کنید",
+        searcghField:"title"
+    }
     return (
-        <TablePages data={data} dataInfo={dataInfo} additionField={additionField}/>
+        <TablePages data={data} dataInfo={dataInfo} additionField={additionField} searchParams={searchParams} numOfPage={8}>
+            <AddProduct/>
+            <AddProductAtt/>
+        </TablePages>
         // <table className="table table-responsive text-center table-hover table-bordered">
         //         <thead className="table-secondary">
         //             <tr>

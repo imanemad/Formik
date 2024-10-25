@@ -230,6 +230,7 @@ td , th {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    text-decoration: none;
 }
 
 #sidebar_section .mini_sidebar .Item:not(:first-child):hover{

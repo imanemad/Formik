@@ -12,29 +12,29 @@ const Sidebar = () => {
                 <div className="p-0 m-0">
                     <Profile/>
 
-                    <Item icon='fas fa-tachometer-alt' title='داشبورد'/>
+                    <Item targetPath='/dashboard' icon='fas fa-tachometer-alt' title='داشبورد'/>
 
                     <Title titr='فروشگاه'/>
-                    <Item icon='fas fa-stream' title='مدیریت گروه محصول'/>
-                    <Item icon='fas fa-cube' title='مدیریت محصول'/>
-                    <Item icon='fas fa-copyright' title='مدیریت برند ها'/>
-                    <Item icon='fab fa-pagelines' title='مدیریت گارانتی ها'/>
-                    <Item icon='fas fa-palette' title='مدیریت رنگ ها'/>
-                    <Item icon='fas fa-percentage' title='مدیریت تخفیف ها'/>
+                    <Item targetPath='/categories' icon='fas fa-stream' title='مدیریت گروه محصول'/>
+                    <Item targetPath='/products' icon='fas fa-cube' title='مدیریت محصول'/>
+                    <Item targetPath='/brands' icon='fas fa-copyright' title='مدیریت برند ها'/>
+                    <Item targetPath='/guaranties' icon='fab fa-pagelines' title='مدیریت گارانتی ها'/>
+                    <Item targetPath='/colors' icon='fas fa-palette' title='مدیریت رنگ ها'/>
+                    <Item targetPath='/discounts' icon='fas fa-percentage' title='مدیریت تخفیف ها'/>
 
                     <Title titr='سفارشات و سبد'/>
-                    <Item icon='fas fa-shopping-basket' title='مدیریت سبد ها'/>
-                    <Item icon='fas fa-luggage-cart' title='مدیریت سفارشات'/>
-                    <Item icon='fas fa-truck-loading' title='مدیریت نحوه ارسال'/>
+                    <Item targetPath='/carts' icon='fas fa-shopping-basket' title='مدیریت سبد ها'/>
+                    <Item targetPath='/orders' icon='fas fa-luggage-cart' title='مدیریت سفارشات'/>
+                    <Item targetPath='/deliveries' icon='fas fa-truck-loading' title='مدیریت نحوه ارسال'/>
 
                     <Title titr='کاربران و همکاران'/>
-                    <Item icon='fas fa-users' title='مشاهده کاربران'/>
-                    <Item icon='fas fa-user-tag' title='نقش ها'/>
-                    <Item icon='fas fa-shield-alt' title='مجوز ها'/>
+                    <Item targetPath='/users' icon='fas fa-users' title='مشاهده کاربران'/>
+                    <Item targetPath='/roles' icon='fas fa-user-tag' title='نقش ها'/>
+                    <Item targetPath='/permissions' icon='fas fa-shield-alt' title='مجوز ها'/>
 
                     <Title titr='ارتباطات'/>
-                    <Item icon='fas fa-question-circle' title='سوال ها'/>
-                    <Item icon='fas fa-comment' title='نظرات'/>
+                    <Item targetPath='/questions' icon='fas fa-question-circle' title='سوال ها'/>
+                    <Item targetPath='/comments' icon='fas fa-comment' title='نظرات'/>
                 </div>
             </div>
         </section>

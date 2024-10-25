@@ -1,4 +1,5 @@
 import React from 'react';
+import AddCategoryAtt from './AddCategoryAtt';
 
 const TableCategory = () => {
     return (
@@ -57,6 +58,7 @@ const TableCategory = () => {
                     </td>
                 </tr>
             </tbody>
+            <AddCategoryAtt/>
         </table>
     );
 }
