@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import AuthFormikControl from '../../components/authForm/AuthFormikControl';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Alert } from '../../utils/sweetAlert';
+import { loginService } from '../../services/auth/auth';
 
 
 const initialValues ={
@@ -13,25 +13,22 @@ const initialValues ={
     remember:false
 }
 
-const onSubmit = (values,submitMethods,navigate)=>{
-    localStorage.removeItem('loginToken');
-
-    axios.post('https://ecomadminapi.azhadev.ir/api/auth/login',{
-        ...values,
-            remember:values.remember?1:0
-    }).then(res=>{
-        if(res.status===200){
-            localStorage.setItem('loginToken',JSON.stringify(res.data))
-            navigate('/')
-            submitMethods.setSubmitting(false)
-        }else{
-            submitMethods.setSubmitting(false)
-            Alert("توجه!!!",res.data.message,"error")
-        }
-    }).catch(error=>{
+const onSubmit = async (values,submitMethods,navigate)=>{
+    try {
+        const res = await loginService(values)
+            if(res.status===200){
+                localStorage.setItem('loginToken',JSON.stringify(res.data))
+                navigate('/')
+                submitMethods.setSubmitting(false)
+            }else{
+                submitMethods.setSubmitting(false)
+                Alert("توجه!!!",res.data.message,"error")
+            }
+    } catch (error) {
         Alert("توجه !!!","متاسفانه مشکلی در سمت سرور پیش آمده","error")
         submitMethods.setSubmitting(false)
-    })
+    }
+    
 }
 
 const validationSchema = Yup.object({

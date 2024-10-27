@@ -1,40 +1,36 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
+import { logoutService } from '../../services/auth/auth';
+import { Alert } from '../../utils/sweetAlert';
 
 const Logout = () => {
     const [loading,setLoading]=useState(true)
 
-    useEffect(()=>{
-        // const loginToken=JSON.parse(localStorage.getItem('loginToken'))
-        // if(loading && loginToken.token){
-        //     axios.get('https://ecomadminapi.azhadev.ir/api/auth/logout',{
-        //         headers:{
-        //             Authorization:`bearer ${loginToken.token}`,
-        //         },
-        //     })
-        //     .then(res=>{
-        //         console.log("Logout successful", res);
-        //         localStorage.removeItem("loginToken")
-        //         setLoading(false)
-        //     })
-        //     .catch(error=>{
-        //         console.error("Error during logout:", error);
-        //         setLoading(false)
-        //     });
-        // }else{
-        //     setLoading(false)
-        // }
-        localStorage.removeItem("loginToken")
-        setLoading(false)
+    const handleLogout= async ()=>{
+        try {
+            const res = await logoutService()
+            if (res.status===200){
+                localStorage.removeItem('loginToken')
+            }else{
+                Alert("متاسفم",res.data.message,"error")
+            }
+            setLoading(false)
+        } catch (error) {
+            setLoading(false)
+            Alert("متاسفم","مشکلی در سمت سرور است","error")
+        }
+    }
 
-    },[loading])
+    useEffect(()=>{
+        handleLogout()
+    },[])
 
     return (
         <>
             {loading?(
-                <h1>Loading...</h1>
+                <h1>لطفا صبر کنید . . .</h1>
             ):(
                 <Navigate to="/auth/login"/>
             )}
