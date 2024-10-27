@@ -8,83 +8,83 @@ const AddOrder = () => {
                 <i className="fas fa-plus text-light"></i>
             </button>
             <ModalsContainer title="افزودن سفارش" id="add_order_modal" fullScreen={true}>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row my-1 justify-content-center">
-                            <div class="col-12 col-md-4 col-lg-2 my-1">
-                                <input type="text" class="form-control" list="cart_list_select" placeholder="انتخاب سبد"/>
+                <div className="modal-body">
+                    <div className="container">
+                        <div className="row my-1 justify-content-center">
+                            <div className="col-12 col-md-4 col-lg-2 my-1">
+                                <input type="text" className="form-control" list="cart_list_select" placeholder="انتخاب سبد"/>
                                 {/* <datalist id="cart_list_select">
                                     <option value="46 - سبد شماره 1">
                                     <option value="58 - سبد شماره 2">
                                 </datalist> */}
                             </div>
-                            <div class="col-12 col-md-4 col-lg-2 my-1">
-                                <input type="text" class="form-control" placeholder="تاریخ پرداخت"/>
+                            <div className="col-12 col-md-4 col-lg-2 my-1">
+                                <input type="text" className="form-control" placeholder="تاریخ پرداخت"/>
                             </div>
-                            <div class="col-12 col-md-4 col-lg-2 my-1">
-                                <input type="text" class="form-control" value="پرداخت : 500,000 تومان" disabled/>
+                            <div className="col-12 col-md-4 col-lg-2 my-1">
+                                <input type="text" className="form-control" value="پرداخت : 500,000 تومان" disabled/>
                             </div>
-                            <div class="col-12 col-md-4 col-lg-2 my-1">
-                                <input type="text" class="form-control" value="تخفیف : 5,000 تومان" disabled/>
+                            <div className="col-12 col-md-4 col-lg-2 my-1">
+                                <input type="text" className="form-control" value="تخفیف : 5,000 تومان" disabled/>
                             </div>
-                            <div class="col-12 col-md-4 col-lg-2 my-1">
-                                <input type="text" class="form-control" placeholder="کد تخفیف" />
+                            <div className="col-12 col-md-4 col-lg-2 my-1">
+                                <input type="text" className="form-control" placeholder="کد تخفیف" />
                             </div>
-                            <div class="col-12"></div>
-                            <div class="col-12 col-md-10 my-1">
-                                <input type="text" class="form-control" placeholder="آدرس کامل"/>
+                            <div className="col-12"></div>
+                            <div className="col-12 col-md-10 my-1">
+                                <input type="text" className="form-control" placeholder="آدرس کامل"/>
                             </div>
-                            <div class="col-12"></div>
-                            <div class="col-12 col-md-4 col-lg-2 my-1">
-                                <select class="form-control">
+                            <div className="col-12"></div>
+                            <div className="col-12 col-md-4 col-lg-2 my-1">
+                                <select className="form-control">
                                     <option value="">نوع ارسال</option>
                                     <option value="1">پیشتاز</option>
                                     <option value="2">معمولی</option>
                                 </select> 
                             </div>
-                            <div class="col-12 col-md-4 col-lg-2 my-1">
-                                <input type="text" class="form-control" placeholder="تلفن"/>
+                            <div className="col-12 col-md-4 col-lg-2 my-1">
+                                <input type="text" className="form-control" placeholder="تلفن"/>
                             </div>
-                            <div class="col-12 col-md-4 col-lg-2 my-1">
-                                <input type="text" class="form-control" placeholder="ایمیل"/>
+                            <div className="col-12 col-md-4 col-lg-2 my-1">
+                                <input type="text" className="form-control" placeholder="ایمیل"/>
                             </div>
-                            <div class="col-12 col-md-4 col-lg-2 my-1">
-                                <input type="text" class="form-control" placeholder="شماره کارت"/>
+                            <div className="col-12 col-md-4 col-lg-2 my-1">
+                                <input type="text" className="form-control" placeholder="شماره کارت"/>
                             </div>
-                            <div class="col-12 col-md-4 col-lg-2 my-1">
-                                <input type="text" class="form-control" placeholder="نام بانک"/>
+                            <div className="col-12 col-md-4 col-lg-2 my-1">
+                                <input type="text" className="form-control" placeholder="نام بانک"/>
                             </div>
 
-                            <hr class="mt-3"/>
+                            <hr className="mt-3"/>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-md-6 col-lg-8">
-                                <div class="input-group my-1 dir_ltr">
-                                    <span class="input-group-text justify-content-center w_15" >عدد</span>
-                                    <input type="number" class="form-control text-center w_15" placeholder=""  value="50" disabled/>
-                                    <span class="input-group-text text-end w_70 font_08 d-flex align-items-center text_truncate">
+                        <div className="row justify-content-center">
+                            <div className="col-12 col-md-6 col-lg-8">
+                                <div className="input-group my-1 dir_ltr">
+                                    <span className="input-group-text justify-content-center w_15" >عدد</span>
+                                    <input type="number" className="form-control text-center w_15" placeholder=""  value="50" disabled/>
+                                    <span className="input-group-text text-end w_70 font_08 d-flex align-items-center text_truncate">
                                         محصول شماره 1
                                         ( 100هزار تومان)
                                         ( گارانتی فلان)
-                                        <i class="fas fa-circle mx-1" style={{color: "#000"}}></i>
+                                        <i className="fas fa-circle mx-1" style={{color: "#000"}}></i>
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-8">
-                                <div class="input-group my-1 dir_ltr">
-                                    <span class="input-group-text justify-content-center w_15" >عدد</span>
-                                    <input type="number" class="form-control text-center w_15" placeholder=""  value="5" disabled/>
-                                    <span class="input-group-text text-end w_70 font_08 d-flex align-items-center text_truncate">
+                            <div className="col-12 col-md-6 col-lg-8">
+                                <div className="input-group my-1 dir_ltr">
+                                    <span className="input-group-text justify-content-center w_15" >عدد</span>
+                                    <input type="number" className="form-control text-center w_15" placeholder=""  value="5" disabled/>
+                                    <span className="input-group-text text-end w_70 font_08 d-flex align-items-center text_truncate">
                                         محصول ویژه و مورد خاص شماره 2
                                         ( 100هزار تومان)
                                         ( گارانتی فلان)
-                                        <i class="fas fa-circle mx-1" style={{color: "rgb(236, 16, 16)"}}></i>
+                                        <i className="fas fa-circle mx-1" style={{color: "rgb(236, 16, 16)"}}></i>
                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="btn_box text-center col-12 mt-4">
-                            <button class="btn btn-primary ">ذخیره</button>
+                        <div className="btn_box text-center col-12 mt-4">
+                            <button className="btn btn-primary ">ذخیره</button>
                         </div>    
                     </div>
                 </div>

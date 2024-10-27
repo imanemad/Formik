@@ -16,6 +16,7 @@ import Roles from '../../../pages/roles/Roles';
 import Permissions from '../../../pages/permissions/Permissions';
 import Comments from '../../../pages/comments/Comments';
 import Questions from '../../../pages/questions/Questions';
+import Logout from '../../../pages/auth/Logout';
 
 const Content = () => {
     const {menu}=useContext(LayoutContext)
@@ -37,6 +38,7 @@ const Content = () => {
                 <Route path='/permissions' element={<Permissions/>}/>
                 <Route path='/comments' element={<Comments/>}/>
                 <Route path='/questions' element={<Questions/>}/>
+                <Route path='/logout' element={<Logout/>}/>
 
                 <Route path='*' element={<Dashboard/>}/>
             </Routes>

@@ -1,6 +1,7 @@
 import React from 'react';
 import TableOrders from './TableOrders';
 import AddOrder from './AddOrder';
+import DetailOrder from './DetailOrder';
 
 const Orders = () => {
     return (
@@ -15,6 +16,7 @@ const Orders = () => {
                 </div>
                 <div className="col-2 col-md-6 col-lg-4 d-flex flex-column align-items-end">
                     <AddOrder/>
+                    <DetailOrder/>
                 </div>
             </div>
             <TableOrders/>
