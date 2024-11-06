@@ -61,10 +61,11 @@ const TableProduct = () => {
             </>
         )
     }
-    const additionField={
+    
+    const additionField=[{
         title:"عملیات",
         elements:()=>additionalElements()
-    }
+    }]
     const searchParams={
         title:"جستجو",
         placeholder:"قسمتی از عنوان را وارد کنید",

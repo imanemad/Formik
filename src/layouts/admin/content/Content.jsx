@@ -17,6 +17,8 @@ import Permissions from '../../../pages/permissions/Permissions';
 import Comments from '../../../pages/comments/Comments';
 import Questions from '../../../pages/questions/Questions';
 import Logout from '../../../pages/auth/Logout';
+import CategoryChildren from '../../../pages/category/CategoryChildren';
+import AddCategoryAtt from '../../../pages/category/Att/AddCategoryAtt';
 
 const Content = () => {
     const {menu}=useContext(LayoutContext)
@@ -24,7 +26,10 @@ const Content = () => {
         <section id="content_section" className={`bg-light py-2 px-3 ${menu?'with_sidebar':''}`}>
             <Routes>
                 <Route path='/' element={<Dashboard/>}/>
-                <Route path='/categories' element={<Categories/>}/>
+                <Route path='/categories' element={<Categories/>}>
+                    <Route path=':Id' element={<CategoryChildren/>}/>
+                </Route>
+                <Route path='/categories/:Id/attributes' element={<AddCategoryAtt/>}/>
                 <Route path='/products' element={<Products/>}/>
                 <Route path='/guaranties' element={<Guaranties/>}/>
                 <Route path='/colors' element={<Colors/>}/>

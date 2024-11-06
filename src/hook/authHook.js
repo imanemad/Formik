@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import httpService from '../services/httpService';
+import { getUserService } from "../services/auth/auth";
 
 export const useIsLogin=()=>{
     const [isLogin,setIsLogin]=useState(false)
@@ -7,7 +7,7 @@ export const useIsLogin=()=>{
 
     const handlerCheckLogin=async()=>{
         try {
-            const res=await httpService('/auth/user','get')
+            const res=await getUserService()
             setIsLogin(res.status===200 ? true:false)
             setLoading(false)
         } catch (error) {

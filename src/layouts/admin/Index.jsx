@@ -13,7 +13,7 @@ const Index = () => {
         <>
         {
             loading ? (
-                <h1>Loading...</h1>
+                <h1>لطفا صبر کنید . . .</h1>
                 
             ): isLogin ? (
                 <>

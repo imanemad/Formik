@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import Loading from './Loading';
 
-const TablePages = ({children,data,dataInfo,additionField,numOfPage,searchParams}) => {
-    console.log(numOfPage)
+const TablePages = ({children,data,dataInfo,additionField,numOfPage,searchParams,loading}) => {
     const [initData,setInitData]=useState(data)
     const [searchChar,setSearchChar]=useState("")
 
@@ -43,35 +43,43 @@ const TablePages = ({children,data,dataInfo,additionField,numOfPage,searchParams
                     {children}
                 </div>
             </div>
-
-            <table className="table table-responsive text-center table-hover table-bordered">
-                <thead className="table-secondary">
-                    <tr>
-                        {dataInfo.map(i=>(
-                            <th key={i.feild}>{i.title}</th> 
-                        ))}
-                        {
-                            additionField?(
-                                <th>{additionField.title}</th>
-                            ):null
-                        }
-                    </tr>
-                </thead>
-                <tbody>
-                        {tableData.map(d=>(
-                            <tr key={d.id}>
-                                {dataInfo.map(i=>(
-                                    <td key={i.feild+"_"+d.id}>{d[i.feild]}</td> 
-                                ))}
-                                {
-                                    additionField?(
-                                        <th>{additionField.elements(d.id)}</th>
-                                    ):null
-                                }
-                            </tr>
-                        ))}
-                </tbody>
-            </table>
+            {
+                loading?(<Loading/>):
+                (
+                    data.length?(
+                        <table className="table table-responsive text-center table-hover table-bordered">
+                            <thead className="table-secondary">
+                                <tr>
+                                    {dataInfo.map(i=>(
+                                        <th key={i.feild}>{i.title}</th> 
+                                    ))}
+                                    {
+                                        additionField?additionField.map((a,index)=>(
+                                            <th key={"key_"+index}>{a.title}</th>
+                                        )):null
+                                    }
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    {tableData.map(d=>(
+                                        <tr key={d.id}>
+                                            {dataInfo.map(i=>(
+                                                <td key={i.feild+"_"+d.id}>{d[i.feild]}</td> 
+                                            ))}
+                                            {
+                                                additionField?additionField.map((a,index)=>(
+                                                    <td key={"key_"+index}>{a.elements(d)}</td>
+                                                )):null
+                                            }
+                                        </tr>
+                                    ))}
+                            </tbody>
+                        </table>):(
+                        <h4 className='text-danger text-center mt-5'>موردی یافت نشد!</h4>
+                    )
+                )
+            }
 
             {pages.length>1&&(
                 <nav aria-label="Page navigation example" className="d-flex justify-content-center">
